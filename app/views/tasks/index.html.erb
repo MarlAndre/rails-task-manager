@@ -1,6 +1,10 @@
 <h1>My tasks</h1>
 <ul>
   <% @tasks.each do |task| %>
-    <li><%= task.title %> <%= link_to "Edit", task_path(task), method: :patch %></li>
+  <li>
+      <%= link_to task_path(task) do %>
+        <%= task.title.capitalize %>
+      <% end %>
+  </li>
   <% end %>
 </ul>
